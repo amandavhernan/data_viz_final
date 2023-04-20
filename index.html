@@ -1,10 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-	<title>Title</title>
+ <head>
+   <!-- required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- chart.js cdn -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+   <!-- stylesheet -->
+   <link rel="stylesheet" href="style.css">
+   <title>Title</title>
+
 </head>
-<body>
-	<h1>Headline</h1>
-	<p>Text</p>
-</body>
+ <body>
+
+    <div class="chartContainer">
+        <canvas id="lineChart"></canvas>
+        <p>Source: PFAS Project Lab at Northeastern University</p>
+    </div>
+
+    <script src="script.js"></script>
+ </body>
 </html>
