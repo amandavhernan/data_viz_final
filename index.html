@@ -1,93 +1,76 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Bicycle Theft in London – Leaflet Heatmap Template</title>
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.heat/0.2.0/leaflet-heat.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFAS Contamination</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+<body>
 
-<body class="helvetica">
+    <!-- project -->
+    <div class="container">
+        <h2>How safe is your water?</h2>
+        <h5 style="text-align: center;">PFAS or "forever chemicals" have been detected in water systems across the United States at various levels over the last 20 years. The group of about 12,000 synthetic chemicals are used to make a variety of industrial and consumer products. Exposure has been linked to serious health risks, such as high cholesterol and kidney cancer.</h5>
+        <p class="byline horizontal_line">By Amanda Hernández | May 10, 2023</p>
 
-  <div id="map" class="vh-100 vw-100 bg-near-white"></div>
+        <p>Per- and polyfluoroalkyl substances, commonly known as PFAS, are a group of man-made chemicals that have been used in a wide range of industrial and consumer products since the 1940s, according to the National Institutes of Health. These substances are highly resistant to water and heat, which make them attractive ingredients for products, such as non-stick cookware, food packaging and firefighting foam.</p>
+        <p>Recent studies have shown that PFAS contamination is becoming a significant problem in the United States, with potentially serious health and environmental consequences.</p>
+        <p>PFAS chemicals are known as "forever chemicals" because they do not break down in the environment and can accumulate in living organisms, including humans. Exposure to PFAS has been linked to a range of health problems, including increased cholesterol levels and increased risk of kidney cancer. PFAS contamination has been found in soil and water sources across the United States.</p>
+        <p>Most people in the United States have already been exposed to PFAS, and have PFAS in their blood, according to the Centers for Disease Control and Prevention.</p>
 
-  <div id="legend" class="bg-white fixed top-0 left-0 pa2 mt2 ml2 br1 o-90" style="z-index: 999; width: 380px">
-    <h1 class="f3 mt0">Bicycle Theft in London</h1>
+        <div class="flourish-embed flourish-map" data-src="visualisation/13687720"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-    <p class="measure mb1">
-      This heatmap shows hotspots of bicycle theft in London
-      in January–July 2020 according to the Metropolitan Police data.
-    </p>
+        <p>While PFAS contamination is widespread, contaminated water sites are more prevalent in ZIP codes that are poorer and more racially diverse. Of the ZIP codes where PFAS was detected in water sites, 49% were in ZIP codes where the median household income was below the 2020 national average of $67,521.</p>
+        <p>One in six ZIP codes with PFAS-contaminated water sites have a higher proportion of non-white population than the national average of 42.2%. A 2019 report from the Natural Resources Defense Council found that communities of color face an increased risk of exposure to unsafe water.</p>
+        <p>The problem is particularly acute around military bases. In many cases, groundwater and soil around these bases have become contaminated, posing a risk to nearby communities. Data from Northeastern University's PFAS Project Lab shows that out of the known PFAS sites in this country, the majority are sourced from landfills and military bases or facilities.</p>
 
-  </div>
+        <div class="flourish-embed flourish-sankey" data-src="visualisation/13700059"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-  <script>
+        <br></br>
+        <p>Despite the growing evidence of the health risks associated with PFAS exposure, regulation of these chemicals has been slow to come. The Environmental Protection Agency is responsible for monitoring PFAS contamination across the U.S. In October 2021, the EPA released its plan for addressing the problem, but by early 2023, it had only issued a few advisories and missed key deadlines.</p>
 
-   var map = L.map('map', {
-    zoomControl: false, // Add zoom control separately below
-    center: [39.50, -98.35], // Initial map center
-    zoom: 4, // Initial zoom level
-    attributionControl: false, // Instead of default attribution, we add custom at the bottom of script
-    scrollWheelZoom: false
-  })
+        <img src="pfas_bubble_chart.png" class="image">
 
-  // Add zoom in/out buttons to the top-right
-  L.control.zoom({position: 'topright'}).addTo(map)
+        <br></br>
+        <p>This past March, the EPA proposed the first federal limits on six forever chemicals in drinking water. The proposal includes setting a limit of 4 parts per trillion, the lowest level that can be accurately measured, for two types of PFAS chemicals called PFOA and PFOS. The EPA is currently undergoing a three-year testing period where its assessing public water systems across the country for contaminants, including 29 PFAS compounds.</p>
+        <p>Some states have also taken action to raise awareness and regulate PFAS levels by launching testing programs and building interactive dashboards. While data shows that PFAS have become more prevalent in this country's water systems, the rise in number of sites is likely the result of an increase in testing nationwide. The number of new detections in water sources each year rose from 750 in 2013 to 2,313 in 2021 – a roughly 208% increase.</p>
+        
+        <div class="flourish-embed flourish-chart" data-src="visualisation/13699940"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        
+        <br></br>
+        <h3><b>PFAS in Maryland</b></h3>
 
-  // Add baselayer
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map)
+        <p>Maryland is among the states working toward reducing PFAS in the environment. The state’s environmental department began testing water systems in 2020, and has since completed several rounds of testing. In addition to testing water treatment centers and public water systems, the state has also committed to a joint effort with the U.S. Department of Defense to evaluate PFAS levels at military bases and other facilities across the state. According to the state’s website, PFAS compounds have been found at the following military bases or facilities:</p>
+        <ul>
+            <li>Fort Meade Tipton Airfield</li>
+            <li>Naval Research Lab</li>
+            <li>Chesapeake Beach Detachment</li>
+            <li>Navy Bayhead Annex</li>
+            <li>Naval Research Laboratory</li>
+            <li>Aberdeen Proving Ground</li>
+            <li>Naval Air Station Patuxent River</li>
+            <li>Joint Base Andrews</li>
+            <li>Brandywine Defense Reutilization and Marketing Office</li>
+        </ul>
 
-  // Add geographical labels only layer on top of baselayer
-  var labels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19,
-    pane: 'shadowPane'  // always display on top
-  }).addTo(map)
+        <div class="flourish-embed flourish-map" data-src="visualisation/13688066"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-  // Read data from CSV file
-  $.get('data.csv', function(csvString) {
-  console.log(csvString);  // Add this line
-  // Use PapaParse to transform file into arrays
-  var data = Papa.parse(csvString.trim()).data.filter(
-    function(row) { return row.length === 2 }
-  ).map(function(a) {
-    return [ parseFloat(a[0]), parseFloat(a[1]) ]
-  })
+    </div>
 
-    // Add all points into a heat layer
-    var heat = L.heatLayer(data, {
-      radius: 25,
-      blur: 15,
-    })
-
-    // Add the heatlayer to the map
-    heat.addTo(map)
-  })
-
-  // Add custom attribution
-  L.control.attribution({
-    prefix: '<a href="https://github.com/HandsOnDataViz/leaflet-heatmap">View data and code</a> \
-      by <a href="https://handsondataviz.org" target="_blank">HandsOnDataViz</a>'
-  }).addTo(map)
-
-  </script>
+    <!-- footer -->
+    <div class="container">
+        <footer class="py-3 my-4 border-top">
+          <p>&copy; 2023 Amanda Hernández</p>
+        </footer>
+      </div>
 
 </body>
-
 </html>
